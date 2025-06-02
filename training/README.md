@@ -2,18 +2,25 @@
 The classification models are designed to categorize the titles and abstracts of scientific publications into predefined groups. To accomplish this, we use [ClimateBERT](https://huggingface.co/climatebert) — a transformer-based, pre-trained language model that has been fine-tuned to capture the domain-specific language typical of climate change literature — and further train it for our specific classification task.
 
 ### Installation Guide 
-Prerequisites are
+#### Prerequisites 
 - Up-to-date GNU/Linux operating system
 - Python 3.10 or higher (with matching pip and virtualenv)
-The code has not been tested on Windows.
+> **Note:** The code has not been tested on Windows.
 
-Follow these steps to set up the environment for training and testing the models after cloning the repository.
+#### Setup Instructions
+After cloning the repository, set up the environment for training and testing the models:
 '''
 cd training/
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 '''
+
+It is highly recommended to train the models on GPU-enabled machines to significantly reduce training time.
+
+The models used for categorization in the publication were trained on the high-performance computing cluster of the Potsdam Institute for Climate Impact Research (PIK), utilizing their GPU environment.
+
+To help users test and experiment with the scripts, we provide sample training datasets within the repository.
 
 ### How to use
 There are two main scripts for training and testing the classifiers:
@@ -29,5 +36,8 @@ A script can operate in two modes controlled by the `testing` parameter:
 
 - **Training mode**: In this mode, the entire training dataset is used to train the final classification model, ensuring that no information is left out.
 
-Instructions for setting parameters and switching between modes are provided in the script documentation.
+Instructions for setting parameters and switching between modes are provided in the script documentation. 
+
+
+
 
